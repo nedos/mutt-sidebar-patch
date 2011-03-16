@@ -1,0 +1,10 @@
+This is a project to host the latest mutt-sidebar patch for mutt
+1.5.21. The goal of this repository is to maintain a patch that is
+applicable the Homebrew [1] mutt package.
+
+The patch itself is derived from the sidebar patch [2] from the debian
+mutt-patched package [3].
+
+[1] https://github.com/mxcl/homebrew
+[2] http://patch-tracker.debian.org/patch/series/view/mutt/1.5.21-2/mutt-patched/sidebar
+[3] http://packages.debian.org/experimental/mutt-patched
