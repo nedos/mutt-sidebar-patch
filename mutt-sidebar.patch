@@ -58,7 +58,7 @@ index 8414a8b..ef14453 100644
 +OP_SIDEBAR_PREV "go to previous mailbox"
 +OP_SIDEBAR_OPEN "open hilighted mailbox"
 diff --git a/buffy.c b/buffy.c
-index fd54dd2..6748e9f 100644
+index fd54dd2..90bf3e4 100644
 --- a/buffy.c
 +++ b/buffy.c
 @@ -312,6 +312,10 @@ static int buffy_maildir_hasnew (BUFFY* mailbox)
@@ -83,7 +83,7 @@ index fd54dd2..6748e9f 100644
        rc = 1;
        break;
      }
-@@ -337,6 +343,32 @@ static int buffy_maildir_hasnew (BUFFY* mailbox)
+@@ -337,6 +343,34 @@ static int buffy_maildir_hasnew (BUFFY* mailbox)
  
    closedir (dirp);
  
@@ -113,10 +113,12 @@ index fd54dd2..6748e9f 100644
 +    }
 +  }
 +
++  closedir (dirp);
++
    return rc;
  }
  
-@@ -345,14 +377,33 @@ static int buffy_mbox_hasnew (BUFFY* mailbox, struct stat *sb)
+@@ -345,14 +379,33 @@ static int buffy_mbox_hasnew (BUFFY* mailbox, struct stat *sb)
  {
    int rc = 0;
    int statcheck;
@@ -151,7 +153,7 @@ index fd54dd2..6748e9f 100644
      if (!option(OPTMAILCHECKRECENT) || sb->st_mtime > mailbox->last_visited)
      {
        rc = 1;
-@@ -374,9 +425,11 @@ static int buffy_mbox_hasnew (BUFFY* mailbox, struct stat *sb)
+@@ -374,9 +427,11 @@ static int buffy_mbox_hasnew (BUFFY* mailbox, struct stat *sb)
  int mutt_buffy_check (int force)
  {
    BUFFY *tmp;
@@ -163,7 +165,7 @@ index fd54dd2..6748e9f 100644
  
    sb.st_size=0;
    contex_sb.st_dev=0;
-@@ -456,6 +509,20 @@ int mutt_buffy_check (int force)
+@@ -456,6 +511,20 @@ int mutt_buffy_check (int force)
        case M_MH:
  	if ((tmp->new = mh_buffy (tmp->path)) > 0)
  	  BuffyCount++;
