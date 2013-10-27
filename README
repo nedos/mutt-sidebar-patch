@@ -1,4 +1,5 @@
-This is a project to host the latest mutt-sidebar patch for mutt 1.5.22. The goal of this repository is to maintain a patch that is applicable the Homebrew [1] mutt package.
+This is a project to host the latest mutt-sidebar patch for mutt 1.5.22.
+The goal of this repository is to maintain a patch that is applicable the Homebrew [1] mutt package.
 
 The patch itself is derived from the sidebar patch [2] from the FreeBSD Ports [3].
 
