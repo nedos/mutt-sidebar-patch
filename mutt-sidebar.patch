@@ -195,8 +195,8 @@ index e5a0f79..225104d 100644
 +  closedir (dirp);
 +}
 +
- /* returns 1 if mailbox has new mail */ 
- static int buffy_mbox_hasnew (BUFFY* mailbox, struct stat *sb)
+ /* returns 1 if maildir has new mail */
+ static int buffy_maildir_hasnew (BUFFY* mailbox)
  {
 @@ -371,6 +477,20 @@ static int buffy_mbox_hasnew (BUFFY* mailbox, struct stat *sb)
    return rc;
@@ -260,9 +260,9 @@ index ef97ca9..2112132 100644
 --- a/color.c
 +++ b/color.c
 @@ -93,6 +93,8 @@ static const struct mapping_t Fields[] =
-   { "bold",		MT_COLOR_BOLD },
    { "underline",	MT_COLOR_UNDERLINE },
    { "index",		MT_COLOR_INDEX },
+   { "prompt",		MT_COLOR_PROMPT },
 +  { "sidebar_new",	MT_COLOR_NEW },
 +  { "sidebar_flagged",	MT_COLOR_FLAGGED },
    { NULL,		0 }
@@ -858,9 +858,9 @@ index f8d6f88..aee797e 100644
  #define CENTERLINE(x,y) move(y, (COLS-strlen(x))/2), addstr(x)
  #define BEEP() do { if (option (OPTBEEP)) beep(); } while (0)
 @@ -120,6 +121,8 @@ enum
-   MT_COLOR_BOLD,
    MT_COLOR_UNDERLINE,
    MT_COLOR_INDEX,
+   MT_COLOR_PROMPT,
 +  MT_COLOR_NEW,
 +  MT_COLOR_FLAGGED,
    MT_COLOR_MAX
