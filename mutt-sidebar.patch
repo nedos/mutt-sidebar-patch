@@ -13,7 +13,7 @@ diff -ruBb --new-file mutt-1.5.24/Makefile.am mutt-1.5.24-sidebar/Makefile.am
 diff -ruBb --new-file mutt-1.5.24/Makefile.in mutt-1.5.24-sidebar/Makefile.in
 --- mutt-1.5.24/Makefile.in	2015-08-30 19:24:26.000000000 +0200
 +++ mutt-1.5.24-sidebar/Makefile.in	2016-03-19 20:25:39.000000000 +0100
-@@ -130,7 +130,7 @@
+@@ -134,7 +134,7 @@
  	system.$(OBJEXT) thread.$(OBJEXT) charset.$(OBJEXT) \
  	history.$(OBJEXT) lib.$(OBJEXT) muttlib.$(OBJEXT) \
  	editmsg.$(OBJEXT) mbyte.$(OBJEXT) url.$(OBJEXT) \
@@ -22,23 +22,23 @@ diff -ruBb --new-file mutt-1.5.24/Makefile.in mutt-1.5.24-sidebar/Makefile.in
  am__objects_1 =
  am__objects_2 = patchlist.$(OBJEXT) conststrings.$(OBJEXT) \
  	$(am__objects_1)
-@@ -475,7 +475,7 @@
+@@ -487,7 +487,7 @@
  	score.c send.c sendlib.c signal.c sort.c \
  	status.c system.c thread.c charset.c history.c lib.c \
  	muttlib.c editmsg.c mbyte.c \
 -	url.c ascii.c crypt-mod.c crypt-mod.h safe_asprintf.c
 +	url.c ascii.c crypt-mod.c crypt-mod.h safe_asprintf.c sidebar.c
- 
+
  nodist_mutt_SOURCES = $(BUILT_SOURCES)
  mutt_LDADD = $(MUTT_LIB_OBJECTS) $(LIBOBJS) $(LIBIMAP) $(MUTTLIBS) \
 @@ -519,7 +519,7 @@
  	README.SSL smime.h group.h \
  	muttbug pgppacket.h depcomp ascii.h BEWARE PATCHES patchlist.sh \
  	ChangeLog mkchangelog.sh mutt_idna.h \
-- snprintf.c regex.c crypt-gpgme.h hcachever.sh.in sys_socket.h \
-+ snprintf.c regex.c crypt-gpgme.h sidebar.h hcachever.sh.in sys_socket.h \
+-	snprintf.c regex.c crypt-gpgme.h hcachever.sh.in sys_socket.h \
++	snprintf.c regex.c crypt-gpgme.h sidebar.h hcachever.sh.in sys_socket.h \
  	txt2c.c txt2c.sh version.sh check_sec.sh
- 
+
  EXTRA_SCRIPTS = smime_keys
 diff -ruBb --new-file mutt-1.5.24/OPS mutt-1.5.24-sidebar/OPS
 --- mutt-1.5.24/OPS	2015-08-30 19:06:38.000000000 +0200
