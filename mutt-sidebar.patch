@@ -31,7 +31,7 @@ diff -ruBb --new-file mutt-1.5.24/Makefile.in mutt-1.5.24-sidebar/Makefile.in
  
  nodist_mutt_SOURCES = $(BUILT_SOURCES)
  mutt_LDADD = $(MUTT_LIB_OBJECTS) $(LIBOBJS) $(LIBIMAP) $(MUTTLIBS) \
-@@ -507,7 +507,7 @@
+@@ -519,7 +519,7 @@
  	README.SSL smime.h group.h \
  	muttbug pgppacket.h depcomp ascii.h BEWARE PATCHES patchlist.sh \
  	ChangeLog mkchangelog.sh mutt_idna.h \
